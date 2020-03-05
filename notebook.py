@@ -1,5 +1,9 @@
 from vector import Vector 
+from line import Line
 from math import acos
+from pylab import *
+import numpy as np
+
 #Initial operations
 v1 = Vector([1,2,3])
 v2 = Vector([1,2,3])
@@ -68,8 +72,15 @@ print(v2.is_ortoghonal_to(w2))
 print(v3.is_ortoghonal_to(w3))
 print(v4.is_ortoghonal_to(w4))
 
+##
+l1 = Line(normal_vector=Vector([4.046, 2.836]), constant_term=1.21)
+l2 = Line(normal_vector=Vector([10.115, 7.09]), constant_term=3.025)
 
-#Test error exception
-#v1 = Vector([0,0])
-#print(v1.normalized())
+l1 = Line(normal_vector=Vector([7.204, 3.182]), constant_term=8.68)
+l2 = Line(normal_vector=Vector([8.172, 4.114]), constant_term=9.883)
 
+l1 = Line(normal_vector=Vector([1.182, 5.562]), constant_term=6.744)
+l2 = Line(normal_vector=Vector([1.773, 8.343]), constant_term=9.525)
+
+print('lines are parallel: {}',l1.is_parallel_to(l2))
+l1.plot_against(l2, np.arange(-10,10,1))

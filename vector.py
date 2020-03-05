@@ -28,6 +28,7 @@ class Vector(object):
     def __eq__(self, v):
         return self.coordinates == v.coordinates
 
+    
     def plus(self, v):
         # https://realpython.com/python-zip-function/#using-zip-in-python
         # takes in iterables as arguments and returns an iterator. 
@@ -83,6 +84,6 @@ class Vector(object):
     def is_zero(self, tolerance=1e-10):
         return self.magnitude() < tolerance
 
-    def is_parallel_to(self, v):        
-        return self.is_zero() or v.is_zero() or round(self.angle(v)) == 0 or round(self.angle(v),2) == round(pi,2)
+    def is_parallel_to(self, v):                
+        return self.is_zero() or v.is_zero() or round(self.angle(v),2) == 0 or round(self.angle(v),2) == round(pi,2)
 
